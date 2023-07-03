@@ -1,0 +1,1 @@
+// https://takeuforward.org/data-structure/left-rotate-the-array-by-one/
