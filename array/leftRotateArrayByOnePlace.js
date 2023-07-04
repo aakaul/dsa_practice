@@ -1,8 +1,10 @@
 // https://takeuforward.org/data-structure/left-rotate-the-array-by-one/
-/**
- * 
- * @param {number[]} arr 
- */
-function leftRotateArrayByOnePlace(arr){
-    return [...arr.slice(1),arr[0]]
+
+function leftRotateArrayByOnePlace(array) {
+    let tempArray = [];
+    for (let i = 1; i < array.length; i++) {
+        tempArray.push(array[i])
+    }
+    tempArray.push(array[0]);
+    return tempArray;
 }

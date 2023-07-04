@@ -1,11 +1,13 @@
 // https://takeuforward.org/data-structure/rotate-array-by-k-elements/
 
-/**
- * 
- * @param {number[]} arr 
- * @param {number} d
- */
-function leftRotateArrayByDPlace(arr,d){
-    if(d>arr.length) d = d%arr.length;
-    return [...arr.slice(d),...arr.slice(0,d)]
+
+function leftRotateArrayByDPlace(array, d) {
+    let tempArray = [];
+    for (let i = d; i < array.length; i++) {
+        tempArray.push(array[i])
+    }
+    for (let i = 0; i < d; i++) {
+        tempArray.push(array[i])
+    }
+    return tempArray;
 }
