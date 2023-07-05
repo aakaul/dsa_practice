@@ -22,3 +22,4 @@ function secondLargestElementInAnArray(arr){
     }
     return secondLarge
 }
+//need to check usnig 2 pointer
