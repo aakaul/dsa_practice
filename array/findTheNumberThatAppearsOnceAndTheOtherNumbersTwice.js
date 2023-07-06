@@ -11,6 +11,7 @@ function numberAppearsOnce(arr){
         acc[cur]++;
         return acc
     },{});
+    // {1:2,2:2,3:1}
     for (const number in objHolder) {
         if (Object.hasOwnProperty.call(objHolder, number)) {
             const el = objHolder[number];
