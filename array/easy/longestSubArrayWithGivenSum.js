@@ -19,25 +19,34 @@
  * @param {number} k 
  * @returns {number}
  */
-function longestSubArrayWithGivenSum(params,k) {
-    let maxCount =0;
-    let [i,j]=[0,0]
-    while(i<params.length){
-        let sum =params[i];
-        if(sum==k){
-            maxCount=Math.max(maxCount,i)
-        }else{
-            while (j<params.length) {
-                let tempSum = params[j]+sum;
-                if((sum+params[j])<k){
-                    sum=tempSum
-                }else{
-                    maxCount=Math.max(maxCount,j-i)
-                    break;
-                }
-                j++;
-            }
+function longestSubArrayWithGivenSum(params, k) {
+    let maxCount = 0;
+    let [i, j] = [0, 0]
+    while (i < params.length) {
+        let sum = params[i];
+        if (sum > k) {
+            i++;
+            break;
         }
+
+        if (sum == k) {
+            maxCount = Math.max(maxCount, i);
+            break;
+        }
+
+        while (j < params.length) {
+            let tempSum = params[j] + sum;
+            if (tempSum < (k + 1)) {
+                sum = tempSum
+            } else {
+                maxCount = Math.max(maxCount, j - i)
+                break;
+            }
+            j++;
+        }
+
         i++;
+        j = i;
     }
+    return maxCount;
 }
