@@ -36,10 +36,10 @@ function longestSubArrayWithGivenSum(params, k) {
 
         while (j < params.length) {
             let tempSum = params[j] + sum;
-            if (tempSum < (k + 1)) {
+            if (tempSum < k ) {
                 sum = tempSum
             } else {
-                maxCount = Math.max(maxCount, j - i)
+                maxCount = Math.max(maxCount, (j - i)+1)
                 break;
             }
             j++;
@@ -50,3 +50,35 @@ function longestSubArrayWithGivenSum(params, k) {
     }
     return maxCount;
 }
+
+//approach 2 using 2 pointer from the video
+
+/** 
+ * @param {number[]} arr 
+ * @param {number} k 
+ * @returns {number}
+ */
+function longestSubArrayWithGivenSum2(arr,k){
+    let i=0,j=0;
+    let max=0
+    let sum = arr[i]
+    while(j<arr.length){
+
+        while (i<=j&&sum>k) {
+            sum=-arr[i]
+            i++;
+        }
+
+        if(sum==k){
+            max=Math.max(max,j-i+1)
+        }
+
+        j++;
+
+        if(j<arr.length) sum+=arr[j]
+    }
+
+    return max
+}
+
+longestSubArrayWithGivenSum2([1,2],3)
