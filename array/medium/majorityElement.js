@@ -12,7 +12,7 @@ function majorityElement(nums) {
         }
         acc[cur]++;
         return acc
-    }, 0)
+    }, {})
     for (const key in obj) {
         if (Object.hasOwnProperty.call(obj, key)) {
             const el = obj[key];
