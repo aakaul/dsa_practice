@@ -16,6 +16,5 @@ function rearrange(params) {
             params[positiveIndex] = el;
             positiveIndex += 2
         }
-
     }
 }

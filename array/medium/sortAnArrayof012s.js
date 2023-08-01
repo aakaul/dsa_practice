@@ -6,17 +6,17 @@
  * @param {number} k
  * @returns {number[]} 
  */
-function sortZerosOnesAndTwos(arr,k){
-    let [low,mid,high]=[0,0,arr.length]
-    while(mid<=high){
-        if(arr[mid]==0){
-            swap(arr,low,mid)
+function sortZerosOnesAndTwos(arr, k) {
+    let [low, mid, high] = [0, 0, arr.length]
+    while (mid <= high) {
+        if (arr[mid] == 0) {
+            swap(arr, low, mid)
             mid++;
             low++;
-        }else if(arr[mid]==1){
+        } else if (arr[mid] == 1) {
             mid++
-        }else{
-            swap(arr,mid,high)
+        } else {
+            swap(arr, mid, high)
             high--;
         }
     }
@@ -29,8 +29,8 @@ function sortZerosOnesAndTwos(arr,k){
  * @param {number} i 
  * @param {number} j 
  */
-function swap(arr,i,j){
-    let temp=arr[i]
-    arr[i]=arr[j]
-    arr[j]=temp
+function swap(arr, i, j) {
+    let temp = arr[i]
+    arr[i] = arr[j]
+    arr[j] = temp
 }
